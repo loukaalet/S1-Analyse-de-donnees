@@ -1,3 +1,4 @@
+#coding : utf8
 import pandas as pd
 import requests
 
@@ -24,7 +25,7 @@ format = "csv"
 stations = ["ME099"]  # Code de la station
 start = "2025-10-01"
 end = "2025-10-30"
-token = "QDH1jwcsg47lV35924EGMeLf8QKDM8L8Y0KDIWAEJzVsa1Wot1eQ"  # Ton token
+token = "3qTUcA1fgV90xJO2HvkSZVwpkxfopiUC5CEeRFoE7FYNMuf8FQ"  #ma clé personnelle
 
 # Générer l'URL
 url = geturl(method, format, stations, start, end, token)
@@ -36,35 +37,99 @@ reponse = requests.get(url)
 # Utiliser testConnexion pour obtenir les données
 data = testConnexion(reponse)
 
+
+#XLSX
+print("-" * 50)
+print("XLSX")
+print("-" * 50)
 # Afficher les données brutes """OK""""
 print("\n\
 Données brutes :")
-for line in data[:10]:  # Affiche les 10 premières lignes
+for line in data[:5]:  # Affiche les 5 premières lignes
     print(line)
 
 
+#Isoler les données, les titres des colonnes et les métadonnées en créant trois listes data2, titre et metadata.
+metadata = []
+titre = []
+data2 = []
+
+for i, ligne in enumerate(data):
+    if i in [0, 1, 2, 3, 4, 6]:
+        metadata.append(ligne)
+    elif i == 5:
+        titre = ligne
+    else:
+        data2.append(ligne)
+
+print(metadata[:5])
+print(titre[:5])   
+print(data2[:5]) 
+
+#Convertir les listes data2 et metadata en objet Pandas
+data = pd.DataFrame(data2)
+data.columns = titre
+metadata_df = pd.DataFrame(metadata)
+
+with pd.ExcelWriter("donnees_meteo_complet_csv.xlsx", engine="openpyxl") as writer:
+    metadata_df.to_excel(writer, sheet_name="Metadonnees", index=False)
+    data.to_excel(writer, sheet_name="Donnees", index=False)
+    print("XLSX : données et métadonnées enregistrées")
+
+print("Nombre de champs :", len(titre))
+print(titre)
+
+#Etape bonus avec json
+print("-" * 50)
+print("JSON")
+print("-" * 50)
 
 
-#Problèmes pour trier les colonnes !!!!
+# Paramètres
+method = "get"
+format = "json"
+stations = ["ME099"]  # Code de la station
+start = "2025-10-01"
+end = "2025-10-30"
+token = "3qTUcA1fgV90xJO2HvkSZVwpkxfopiUC5CEeRFoE7FYNMuf8FQ"  #ma clé personnelle
 
-if isinstance(data, list):
-    print("-*20\n\
-    Données téléchargées avec succès dans la variable 'data'.")
+# Générer l'URL
+url = geturl(method, format, stations, start, end, token)
+print("URL générée :", url)  # Affiche l'URL pour vérification
 
-    # Isoler les métadonnées, les titres et les données
-    metadata = [data[i] for i in [0, 1, 2, 3, 4, 6]]
-    titre = data[5]
-    data2 = data[7:]
+# Envoyer la requête et télécharger les données
+reponse = requests.get(url)
 
-    # Convertir les listes en objets Pandas
-    df_data = pd.DataFrame(data2[1:], columns=titre)  # On commence à data2[1:] pour éviter de reprendre l'en-tête
-    df_metadata = pd.DataFrame(metadata, columns=['Metadata'])
+# Utiliser testConnexion pour obtenir les données
+data = testConnexion(reponse)
 
-    # Enregistrer les objets Pandas
-    df_data.to_excel('donnees.xlsx', index=False)
-    df_metadata.to_csv('metadata.csv', index=False, encoding='utf-8')
 
-    print("-*20\n\
-    Les données ont été enregistrées dans 'donnees.xlsx' et les métadonnées dans 'metadata.csv'.")
-else:
-    print(data)  # Affiche l'erreur
+
+metadata = []
+titre = []
+data2 = []
+
+for i, ligne in enumerate(data):
+    if i in [0, 1, 2, 3, 4, 6]:
+        metadata.append(ligne)
+    elif i == 5:
+        titre = ligne
+    else:
+        data2.append(ligne)
+
+print(metadata[:5])
+print(titre[:5])   
+print(data2[:5]) 
+
+#Convertir les listes data2 et metadata en objet Pandas
+data = pd.DataFrame(data2)
+data.columns = titre
+metadata_df = pd.DataFrame(metadata)
+
+with pd.ExcelWriter("donnees_meteo_complet_json.xlsx", engine="openpyxl") as writer:
+    metadata_df.to_excel(writer, sheet_name="Metadonnees", index=False)
+    data.to_excel(writer, sheet_name="Donnees", index=False)
+    print("XLSX : données et métadonnées enregistrées")
+
+print("Nombre de champs :", len(titre))
+print(titre)
