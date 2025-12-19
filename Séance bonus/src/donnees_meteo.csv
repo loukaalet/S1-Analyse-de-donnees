@@ -1,0 +1,920 @@
+        window.dataLayer = window.dataLayer || [];
+            dataLayer.push(arguments);
+        });
+        window.dataLayer = window.dataLayer || [];
+            dataLayer.push(arguments);
+        gtag('js', new Date());
+        });
+<meta name="description" content="Infoclimat, la m&eacute;t&eacute;o en France en temps r&eacute;el - Weather in realtime Europe, Canada" /><meta name="keywords" content="infoclimat, meteo en direct, france, europe, live, observation meteo, climatologie, gfs, ukmo, wrf, meteo, temps, reel, climat, information, modeles, previsions, association, weather, realtime, europe, temperatures, wind, wetter, weather" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="apple-itunes-app" content="app-id=901314430" /><meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge"><title>Open data - données météo - Infoclimat</title><link href="//static.infoclimat.net/styles/exo/exo.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="//static.infoclimat.net/styles_src/defaut_v5.2_reduce.css?v5.10.css" type="text/css" />    <link rel="stylesheet" type="text/css" href="//static.infoclimat.net/include/js/select/select2-4.1.0.min.css"/>
+        <link rel="alternate" type="application/atom+xml" title="Les 20 derni&egrave;res PhotoLive" href="/photolive/rss.php" />
+        <link rel="alternate" type="application/atom+xml" title="Observations M&eacute;t&eacute;oAlerte" href="http://meteoalerte.com/france/rss.php" />
+            _IC_realtime_display = false;
+                console.log('toggle');
+                var statusBar = $('#searchBarResponsive').css('display');
+                    $('#searchBarResponsive').css('display', 'block').find('input').focus();
+                    $('#responsiveLogo').css('display', 'none');
+                    $('#searchResultsResponsive').css('display', 'block');
+                    $('.sidenav-overlay').css({ opacity: 1, display: 'block', top: 56 });
+                    $('#searchBarResponsive').css('display', 'none');
+                    $('#responsiveLogo').css('display', 'block');
+                    $('#searchResultsResponsive').css('display', 'none');
+                    $('.sidenav-overlay').css({ opacity: 0, display: 'none', top: 0 });
+                $('#searchBarResponsive').toggle();
+                $('#responsiveLogo').toggle();
+                $('#searchResponsive').val('');
+                $('#searchResultsResponsive').css('display', 'none');
+                $('.sidenav-overlay').css({ opacity: 0, display: 'none', top: 0 });
+                var badge = '', photo = '';
+                    badge = /*html*/`<span class="badge new materialize ${v.color}">${v.category}</span>`;
+                    photo = /*html*/`<img src="${v.img}" style="height:50px; float:left; margin-right:8px" alt="">`;
+                    var d = new Date(v.dh * 1000);
+                    var dx = d.toLocaleDateString();
+                    photo += /*html*/`<span style="color:black">${dx}</span>`;
+                `;
+            <div class="collection materialize" style="margin-top:0; text-align:left">
+                <a href="#" class="collection-item materialize">Commencez &agrave; taper pour rechercher</a>
+        height: 112px !important;
+        height: 159px !important;
+                            <img src="//static.infoclimat.net/images/v5.1/logo_IC_5.1.png" style="max-height:48px; margin:0.15em 0;" />
+                    <div class="input-field blue darken-3" id="searchBarResponsive" style="max-width:calc(100% - 124px); position:absolute; left:60px; top:0; display:none; z-index:998">
+                            onblur="if(this.value == ''){responsiveSearchToggle();}"
+                            onkeyup="searchQuerySphinx(this.value, true);"
+                        <i class="material-icons" onclick="closeResponsiveSearch();">close</i>
+                            <a class="materialize" onclick="responsiveSearchToggle();" href="#" style="margin-right:-10px">
+                            <a data-target="slide-out" class="show-on-large sidenav-trigger materialize" href="#" onclick="menusw3($('#menu_alerte_bas'), $(this));">
+                                        <div style="background-image: radial-gradient( circle 592px at 48.2% 50%,  rgba(255,255,249,0.6) 0%, rgba(160,199,254,1) 74.6% ); padding-top:4px; height:52px; color:white; line-height:14px; font-family:Inter,sans-serif; color:#333;">
+            <!--<a href="#" onclick="return false;" class="right" style="font-size:1.2em; text-decoration:none; margin-right:4px; color:#555">&times;</a>-->
+            <b>100% gratuit &bull; 0% pub &bull; comment ?!</b><br>
+            Gr&acirc;ce &agrave; des dizaines de b&eacute;n&eacute;voles, des milliers d'adh&eacute;rents et de donateurs, Infoclimat est rendu possible. Vous aussi, rejoignez-les !
+                    style="height:22px; line-height:22px;"
+                        <i class="material-icons right" style="line-height:22px; height:22px; margin-left:4px; font-size:18px">favorite</i>
+        <ul id="slide-out-left" class="sidenav show-on-small-only" style="text-align:left; list-style-type: none; padding: 0">
+                    <div class="user-view" style="text-align:left; line-height:1rem; padding-top:0px">
+                        <div class="card horizontal white" style="margin-bottom:0; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                                <span class="card-title" style="font-size:18px; line-height:20px">Un petit instant</span>
+                                    Ce site est d&eacute;velopp&eacute;, maintenu, h&eacute;b&eacute;rg&eacute;, g&eacute;r&eacute; par une association &agrave; but non lucratif.
+                                    <a href="https://asso.infoclimat.fr/infos" style="text-decoration:underline">comprendre pourquoi &raquo;</a>
+                                <div class="adhCurseur" style="display:none; margin-top:8px; height:11px; height:3px;">
+                                    <div class="tipsy-trigger" style="width:54.24367771781%; background:linear-gradient(to left, #1d976c, #93f9b9)" title="Adh&eacute;sions : 84863&euro;"></div><!--adh+dons-->
+                                    <div class="tipsy-trigger" style="width:13.349787972244%; background:linear-gradient(to left, #56ab2f, #a8e063);" title="Dons : 27703.48&euro;"></div><!--dons-->
+                                    <!--<span style="right:2px; top:0; line-height:12px">objectif 70.000&euro; &rarr; </span>-->
+                                <p style="text-align:right; margin-top:8px">
+                                        style="height:26px; line-height:26px;"
+                                        ❤️                                         Adh&eacute;rer
+                                        style="height:26px; line-height:26px; margin-left:4px;"
+                                        onclick="return IC_don_affiche_popup();"
+                <div class="user-view" style="text-align:center; padding-top:0px; padding-bottom:0px;">
+                                    $('#row-container-vignettes').html(data);
+                                });
+                            });
+                                    <img src="//static.infoclimat.net/images/v5.2/menu/btn_menu1.png" style="margin-top:8px; height:32px" />
+                            </i> Temps R&eacute;el
+                                <li><a href="/mer/bouees.php">M&eacute;t&eacute;o Marine</a></li>
+                                    <img src="//static.infoclimat.net/images/v5.2/menu/btn_menu2.png" style="margin-top:8px; height:32px" />
+                                        Radar pr&eacute;cipitations
+                                    <img src="//static.infoclimat.net/images/v5.2/menu/btn_menu4.png" style="margin-top:8px; height:32px" />
+                            </i> Pr&eacute;visions
+                                <li><a href="/previsions-meteo-par-ville.html">Pr&eacute;visions g&eacute;olocalis&eacute;es</a></li>
+                                <li><a href="/modeles">Mod&eacute;lisations num&eacute;riques</a></li>
+                                <li><a href="/previsions-regionales-meteo.html">Bulletins expertis&eacute;s</a></li>
+                                    <img src="//static.infoclimat.net/images/v5.2/menu/btn_menu5.png" style="margin-top:8px; height:32px" />
+                                <li><a href="/actualites/categorie/bqs">Bilans m&eacute;t&eacute;o</a></li>
+                                <li><a href="/bulletins-speciaux-phenomenes-violents.html">Bulletins Sp&eacute;ciaux</a></li>
+                                <li><a href="/climato/indicateur_national_RR.php">Indicateur pluviom&eacute;trique <span class="red darken-3 badge new" data-badge-caption="nouveau"></span></a></li>
+                                <li><a href="/climatologie/globale/mois-d-avril/paris-montsouris/07156.html">Climatologie journali&egrave;re</a></li>
+                                <li><a href="/historic">HistorIC des &eacute;v&eacute;nements marquants</a></li>
+                                <li><a href="/modeles/ncep.php">R&eacute;analyses</a></li>
+                                    <img src="//static.infoclimat.net/images/v5.2/menu/btn_menu9.png" style="margin-top:8px; height:32px" />
+                            </i> Communaut&eacute;
+                                <li><a href="/stations/static.php">R&eacute;seau de stations m&eacute;t&eacute;o</a></li>
+                            Contribuer b&eacute;n&eacute;volement
+                            &Agrave; propos de nous
+                            <li onclick="document.location = 'https://asso.infoclimat.fr/rencontres/detail.php?id=43';">
+                    <div class="user-view" style="text-align:left; line-height:1rem;">
+                            <div class="card-image" style="width:300px; max-width:none; background-size:cover; background-position:50% 50%; background-image:url(https://asso.infoclimat.fr/rencontres/images/43.jpg)">
+                                <span class="card-title">&Agrave; venir...</span>
+                                <p>47&egrave;me rencontre m&eacute;t&eacute;o &agrave; Rencurel (Is&egrave;re) du 31 janvier au 7 f&eacute;vrier 2026</p>
+                                <p style="color:#555; font-size:0.9em; margin-top:4px">du 31 janv. au 07 f&eacute;v. 2026</p>
+                                <a href="https://www.helloasso.com/associations/association-infoclimat/formulaires/1" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/3/34/34f221d252ccca5ea27a369e589a33d1.jpg?conf=eyJpbWciOiJcL0ZUUFNcL2Z0cF9ic1wvMjAyNVwvMDFcL2NhcnRlYWRoZXJlbnRlMjAyNXJlanBnLmpwZyIsInciOjIwMCwiaCI6MjAwLCJxIjo5MCwiayI6IklDIn0,'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">08/12</span>
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">La campagne d'adhésion pour l'année 2025  s'est terminée le 30/11. Un grand merci aux 2 682 adhérents à Infoclimat pour 2025 !
+                    </a>                    <a href="https://www.infoclimat.fr/boutique/details.php?id=14" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/7/7e/7e845beb28ef615bd84d38433628c540.jpg?conf=eyJpbWciOiJodHRwczpcL1wvd3d3LmluZm9jbGltYXQuZnJcL0ZUUFNcL2Z0cF9ic1wvMjAyNVwvMTJcL2NhcHR1cmUtZC1lY3Jhbi0yMDI1LTEyLTAxLTExNTMwMGpwZy5qcGciLCJ3IjoyMDAsImgiOjIwMCwicSI6OTAsImsiOiJJQyJ9'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">08/12</span>
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">Comme chaque année, nous vous proposons un calendrier des plus belles photos de 2025, sur papier glacé format A3 !</p>
+                    </a>                    <a href="/actualites/static/13959/nouvelle-static-ampagrave-huddersfield-gb.html" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/2/23/23dff947a02ffd98ae682a283f34913c.jpg?conf=eyJpbWciOiJodHRwczpcL1wvd3d3LmluZm9jbGltYXQuZnJcL3N0YXRpb25zLW1ldGVvXC9waG90b3Mtc3RhdGlvbnNcL1NUQVRJQzA0NTBcL2IzOGFkODgyMTU5YThmYzE4MTk1Njk1NDZqcGcuanBnIiwidyI6MjAwLCJoIjoyMDAsInEiOjkwLCJrIjoiSUMifQ,,'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">06/12</span>
+                                        Nouvelle StatIC &agrave; Huddersfield (GB)
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">Une station rejoint le réseau StatIC ce jour. Elle se situe à Huddersfield (GB).</p>
+                    </a>                    <a href="/actualites/static/13958/nouvelle-static-ampagrave-buziet-64.html" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/7/7a/7a4c006be3480ddd393820ef33f29f5a.jpg?conf=eyJpbWciOiJodHRwczpcL1wvd3d3LmluZm9jbGltYXQuZnJcL3N0YXRpb25zLW1ldGVvXC9waG90b3Mtc3RhdGlvbnNcL1NUQVRJQzA0NDlcL2Y1MWE5NGQ1NmIyMDVmN29qcGcuanBnIiwidyI6MjAwLCJoIjoyMDAsInEiOjkwLCJrIjoiSUMifQ,,'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">05/12</span>
+                                        Nouvelle StatIC &agrave; Buziet (64)
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">Une station rejoint le réseau StatIC ce jour. Elle se situe à Buziet (64).</p>
+                    </a>                    <a href="/actualites/static/13957/nouvelle-static-ampagrave-audes-03.html" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/5/54/54e97b0fb588db94a0f45e40f1691dc5.jpg?conf=eyJpbWciOiJodHRwczpcL1wvd3d3LmluZm9jbGltYXQuZnJcL3N0YXRpb25zLW1ldGVvXC9waG90b3Mtc3RhdGlvbnNcL1NUQVRJQzA0NDhcL2FjMjJjMmU3NTRkY2U1ZDMtMWpwZy5qcGciLCJ3IjoyMDAsImgiOjIwMCwicSI6OTAsImsiOiJJQyJ9'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">03/12</span>
+                                        Nouvelle StatIC &agrave; Audes (03)
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">Une station rejoint le réseau StatIC ce jour. Elle se situe à Audes (03) et a été installée par l&#39;Association Météo-Centre Val-de-Loire...</p>
+                    </a>                    <a href="/actualites/static/13956/nouvelle-static-a-pecsvarad-hongrie.html" style="text-decoration: none; margin:0; padding:0">
+                        <div class="card horizontal blue-grey lighten-5" style="margin:7px 6px 7px 6px;">
+                                                    <div class="card-image" style="min-width:80px; min-height:80px; max-width:none; max-height:none; background:url('https://www.infoclimat.fr/imageserver/8/80/8092e892194a47fecb9a3f8f6cefcdad.jpg?conf=eyJpbWciOiJodHRwczpcL1wvd3d3LmluZm9jbGltYXQuZnJcL3N0YXRpb25zLW1ldGVvXC9waG90b3Mtc3RhdGlvbnNcL1NUQVRJQzA0NDdcLzhkZDQ0NTc4ODAyMjA0YjE3OTk1MTkzODlqcGcuanBnIiwidyI6MjAwLCJoIjoyMDAsInEiOjkwLCJrIjoiSUMifQ,,'); background-position: 50% 50%; background-size:cover">
+                            &nbsp;
+                                    <span class="card-title" style="font-size: 15px; line-height:17px; font-family:Inter,helvetica,verdana,trebuchet,arial,sans-serif; font-weight:bold">
+                                        <span class="badge new indigo darken-3" style="margin:0; height:18px; line-height:18px; padding:0 3px; min-width:auto;">26/11</span>
+                                    <p style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; overflow:hidden">Une station rejoint le réseau StatIC ce jour. Elle se situe à Pécsvárad (HU).</p>
+                $('#slide-out-left').sidenav({ edge: 'left' });
+            });
+            $('.collapsible').collapsible();
+                                <ul id="slide-out" class="sidenav" style="text-align:left; list-style-type: none; padding: 0">
+                            style="position:relative; display:inline-block; text-align:center"
+                        <div style="background:rgba(0,0,0,0.4); margin-left:-32px; margin-right:-32px; padding: 0 32px; padding-top: 1px; text-shadow: 0 0 1px black; text-align:left">
+                                                            <a href="/include/connexion.php" onclick="seConnecterResponsive();return false;"> <!-- @TODO dialog -->
+                                    <span class="white-text" style="font-size:1.3em;">
+                    });
+                });
+                    height: 103px;
+                        height: 111px;
+                    line-height: 1.3em;
+                    position: relative;
+                    height: 72px;
+                    background: #DDD;
+                    color: #555;
+                    border-radius: 2px;
+                    overflow: hidden;
+                    position: absolute;
+                    font-size: 11px;
+                    font-size: 9px;
+                    line-height: 12px;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    padding-left: 2px;
+                    padding-right: 1px;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    background: rgba(0, 0, 0, 0.8);
+                    color: #DDD;
+                    font-size: 0.8em;
+                    opacity: 0.6;
+                    font-style: normal;
+                    font-weight: normal;
+                    top: 18px;
+                    color: rgb(200, 0, 0);
+                    left: 2px;
+                    font-weight: bold;
+                    top: 18px;
+                    right: 2px;
+                    text-align: right;
+                    color: rgb(0, 0, 200);
+                    font-weight: bold;
+                    top: 32px;
+                    color: #222;
+                    left: 2px;
+                    top: 44px;
+                    color: #222;
+                    right: 2px;
+                    text-align: right;
+                    top: 59px;
+                    color: #222;
+                    left: 2px;
+                    top: 59px;
+                    color: rgb(170, 0, 0);
+                    right: 2px;
+                    text-align: right;
+                    top: 12px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    /*background:rgba(0,0,0,0.8);*/
+                    background: rgba(20, 56, 64, 1);
+                    color: #EEE;
+                    font-size: 9px !important;
+                    height: 10px;
+                    line-height: 10px;
+                    padding: 0 2px;
+                    border-radius: 2px;
+                    height: auto;
+                    margin-bottom: -14px;
+                    line-height: 24px;
+                    width: 26px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    color: white;
+                    line-height: 30px;
+                    cursor: pointer;
+                    height: 35px;
+                    padding: 5px;
+                    background: rgba(0, 0, 0, 0.4);
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+                    background-size: 40px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-position: 50% 50%;
+                    float: left;
+                    margin-right: 5px;
+                    box-shadow: 0 0 2px black;
+                    background: rgba(0, 0, 0, 0.8);
+                    font-size: 1.2em;
+                        display: none;
+                    /*max-width:97%;*/
+                    min-width: auto;
+                        width: 100% !important;
+                        max-width: 100%;
+                    width: 95%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 5px;
+                    z-index: 2000;
+                    width: 100px; /* 140 */
+                    box-sizing: border-box;
+                    border: 2px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 13px;
+                    line-height: 13px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    background-image: url('//static.infoclimat.net/images/v5.2/search16.png');
+                    background-position: right 5px center;
+                    background-repeat: no-repeat;
+                    padding: 4px 25px 4px 5px;
+                    -webkit-transition: width 0.4s ease-in-out;
+                    transition: width 0.4s ease-in-out;
+                    width: 150px;
+                    background-color: white;
+                    box-shadow: 0 0 5px solid black;
+                    outline: none;
+                    border: 2px solid transparent;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    width: 1057px;
+                    background: rgba(238, 238, 238, 1);
+                    width: 1057px;
+                    top: 33px;
+                    box-shadow: none;
+                    background: rgba(255, 255, 255, 0.95);
+                    color: #222;
+                    left: 5px;
+                    margin-right: -150px;
+                    overflow: hidden;
+                    color: #222;
+                    height: 115px;
+                    background-position: 0 -436px;
+                    text-align: center;
+                    background: rgba(44, 44, 0, 0.95);
+                    background: rgb(43, 113, 128); /* Old browsers */
+                    background: linear-gradient(to bottom, rgba(43, 113, 128, 1) 0%, rgba(20, 56, 64, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    color: #173f48;
+                    font-weight: bold;
+                    text-shadow: none !important;
+                    background: linear-gradient(to right, rgba(34, 34, 34, 1) 0%, rgba(238, 238, 238, 1) 5%, rgba(238, 238, 238, 1) 95%, rgba(34, 34, 34, 1) 100%);
+                    color: #173f48;
+                    color: #215b68;
+                    color: #173f48;
+                    text-shadow: none;
+                    color: #222;
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+                    border-left: 3px solid #52b3ca;
+                    background: linear-gradient(to bottom, rgba(43, 113, 128, 1) 0%, rgba(20, 56, 64, 1) 100%);
+                    background: linear-gradient(to bottom, rgb(230, 255, 189) 0%, rgba(255, 255, 255, 0) 100%);
+                    display: none;
+                    position: absolute;
+                    top: 56px;
+                    left: 0;
+                    right: 0;
+                    z-index: 1000;
+                var menusw3_already_loaded = false;
+                        return;
+                    menusw3_already_loaded = true;
+                        $('#slide-out').append(data);
+                    });
+                        $('.menu_ouvert_js').slideUp();
+                        return;
+                    var state = elm.css('display');
+                        elm.stop(true, true).removeClass('menu_ouvert_js').slideUp();
+                        z.removeClass('menu_parent_ouvert');
+                            var of = z.offset();
+                            $('.menu_ouvert_js').slideUp();
+                            }).stop(true, true).slideDown();
+                            z.addClass('menu_parent_ouvert');
+                        });
+                };
+                        $('.autocomplete-searchpanel').html('<div style="padding:5px;"><b>Exemple :</b> "tornade", "2 janvier 2010", "Marseille",...</div>')
+                        });
+                        $('.autocomplete-searchpanel').delay(100).fadeOut('fast');
+                };
+                    $('#modal-resp-connexion').modal('open');
+                        <div id="user-login-pad" data-target="" class="sidenav-trigger" onclick="seConnecterResponsive('%2Fopendata%2F%3Fversion%3D2method%3Dget%26format%3Dcsv%26stations%255B%255D%3DME099%26start%3D2025-10-01%26end%3D2025-10-30%26token%3DQDH1jwcsg47lV35924EGMeLf8QKDM8L8Y0KDIWAEJzVsa1Wot1eQ'); return false;">
+                        <!--arrow--><span style="height:0;width:0;border:4px solid transparent;border-top-color:#fff;display:inline-block;margin-bottom:-2px"></span>
+                        <li><a style="position:relative" id="ICMENU-temps_reel" onclick="return menu_open('temps_reel',$(this));" href="#/cartes-des-stations-meteo-temps-reel.html">Temps r&eacute;el<span style="color:red; font-family:Exo; font-size:10px; line-height:10px; height:10px; right:10px; bottom:1px; position:absolute">NOUVEAU</span></a></li><li><a style="position:relative" id="ICMENU-previ" onclick="return menu_open('previ',$(this));" href="#/modeles/point.php">Pr&eacute;vision</a></li><li><a style="position:relative" id="ICMENU-climato" onclick="return menu_open('climato',$(this));" href="#/historic">Climatologie</a></li><li><a style="position:relative" id="ICMENU-apprendre" onclick="return menu_open('apprendre',$(this));" href="#/dossiers">P<img src="//static.infoclimat.net/images/partenaires/mae/mae_mini_32_bw.png" style="margin-top:2px; margin-bottom:-7px;" id="imgMAE_menu_hidden"/>dagogie</a></li><li><a style="position:relative" id="ICMENU-asso" onclick="return menu_open('asso',$(this));" href="#/passionnes/recherche.php">Communaut&eacute;<span style="color:red; font-family:Exo; font-size:10px; line-height:10px; height:10px; right:10px; bottom:1px; position:absolute">NOUVEAU</span><span id="icmailer-aff" onclick="document.location='/mon-compte-infoclimat-messagerie-privee.html'"></span></a></li><li><a style="position:relative" id="ICMENU-association" target="_blank" href="http://asso.infoclimat.fr/">Association</a></li><li><a style="position:relative" id="ICMENU-forums" target="_blank" href="https://forums.infoclimat.fr/">Forums</a></li>                    </ul>
+            height: 100px;
+            border-radius: 5px;
+            width: 100%;
+            display: inline-block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: relative;
+            margin: 2px 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+            background-blend-mode: multiply;
+            position: absolute;
+            /*background-color:rgba(255,255,255,0.9);*/
+            background-color: #10414c;
+            color: white;
+            border-radius: 2px;
+            padding: 0 2px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+            color: #333;
+            background-color: rgba(255, 255, 255, 1);
+            height: 354px !important;
+            width: 1150px !important;
+            max-width: 100%;
+            display: inline-block !important;
+            width: 100% !important;
+            let target_zone = localStorage.getItem('menu-tempsreel-zone') || 'france_lg';
+                let bg = $(elm).attr('data-bgimg');
+                $(elm).css('background-image', `url('${bg.replace('{zone}', target_zone)}')`);
+            });
+            let val = $(e).val();
+            localStorage.setItem('menu-tempsreel-zone', val);
+            reloadDesktopMenu();
+            reloadDesktopMenu();
+            $('#config-desktop-selector').val(localStorage.getItem('menu-tempsreel-zone') || 'france_lg');
+        });
+            <span class="z-depth-2 hoverable menu-principal-imagette" style="width:180px; background-image:url(https://www.infoclimat.fr/meteoalerte/cache/france.png)">
+                <!-- TODO bouton participer ; bouton archives (ancienne page) -->
+                style="margin-top:-28px; float:right; margin-right:5px;"
+                style="margin-top:-28px; float:right; margin-right:5px;"
+                <span class="pchrf">W</span>ebcams <span class="pchrf">M</span>&eacute;t&eacute;o
+                <div id="autocam-container" class="menu-principal-imagette hoverable z-depth-2" style="padding:0; overflow:hidden; display:inline-block; width:100%; text-align:center;margin:5px auto 0 auto;">
+                    <b id="autocam-name" style="background:rgba(0,0,0,0.75);color:white;text-shadow:0px 0px 1px black;font-size:11px">Chargement...</b>
+                    <img id="autocam-image" src="//static.infoclimat.net/images/blank.gif" style="width:100%;max-height:115px" />
+                style="display:block; width:100%; padding:0; margin-top:0px"
+            <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature/radaric:temperatures,countries,landsea,departements/2025/12/10/12/v:40/{zone}.jpeg?maponly=1" style="width: 180px;">
+                <span style="top: 5px; left: 5px;">Pluie</span>
+                <span style="top: 5px; right: 5px;">13:40</span>
+                <span style="bottom: 5px; right: 5px;" class="new badge red" data-badge-caption="NOUVEAU"></span>
+            <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature_HD_3857/irAhdbtrans:temperatures,countries,departements,landsea/2025/12/10/12/v:45/{zone}.jpeg?maponly=1" style="width: 180px;">
+                <span style="top: 5px; left: 5px;">Satellite</span>
+                <span style="top: 5px; right: 5px;">13:45</span>
+                <span style="bottom: 5px; right: 5px;" class="new badge red" data-badge-caption="NOUVEAU"></span>
+            <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk:b:foudre2/foudre:foudre,departements/2025/12/10/13/v:00/{zone}.jpeg?maponly=1" style="width: 180px;">
+                <span style="top: 5px; left: 5px;">Foudre</span>
+                <span style="top: 5px; right: 5px;">14:00</span>
+                <span style="bottom: 5px; right: 5px;" class="new badge red" data-badge-caption="NOUVEAU"></span>
+        <div class="menu-principal-colonne-left" style="width:312px; display:block">
+                <span class="pchrf">O</span>bservations <span class="pchrf">S</span>tations <span class="pchrf">M</span>&eacute;t&eacute;o
+                <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" style="width:150px;" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature_HD_nosst/temperature:temperatures,temperaturesHD,countries,landsea,departements/2025/12/10/12/v:59/{zone}.jpeg?maponly=1"><span>Temp&eacute;rature</span></span>
+                <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" style="width:150px;" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature/msgsrad:temperatures,countries,landsea,departements/2025/12/10/12/v:30/{zone}.jpeg?maponly=1"><span>Ensoleillement</span></span>
+                <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" style="width:150px;" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature_HD_nosst/vent_moyen:temperatures,countries,landsea,departements/2025/12/10/12/v:45/{zone}.jpeg?maponly=1"><span>Vent</span></span>
+                <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" style="width:150px;" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature/ac24hradaric:temperatures,countries,landsea,departements/2025/12/10/12/v:00/{zone}.jpeg?maponly=1"><span>Pluviom&eacute;trie</span></span>
+            <span class="menu-principal-imagette z-depth-2 hoverable minimap-background-needsupdate" style="width:150px;" data-bgimg="https://tempsreel.infoclimat.net/secure-staticmaps/mk::temperature/GHRSSTL4sstrgb:temperatures,countries,landsea,departements/2025/12/09/00/v:00/{zone}.jpeg?maponly=1">
+        <span>Temp&eacute;rature de l'eau<br />M&eacute;t&eacute;o marine</span></span>
+            <span class="menu-principal-imagette z-depth-2 hoverable" style="width:150px; display:inline-block; overflow:hidden; height:100px">
+                <span style="background:rgba(0,0,0,0.0); position:absolute; top:0; left:0; right:0; bottom:0; display:inline-block; z-index:2;"></span>
+                    style="border:0; width:150px; height:100%; overflow:hidden; position:absolute; top:0; left:0;"
+        <div class="menu-principal-colonne-left menu-principal-odd" style="display:block; min-height:354px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); grid-auto-rows: 50px; grid-gap: 2px; grid-auto-flow: dense;">
+                                    <a href="/photolive-photos-meteo-335031-douceur-extreme.html" class="hoverable" style="grid-column:span 2; grid-row: span 2;">
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/825006101220251034_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/47771910122025842_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/56599510122025822_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/42524210122025821_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/8422810122025819_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/5697681012202585_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/5431281012202584_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/7297011012202580_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/8907210122025737_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/1784191220251655_m.jpg);"></div>
+                        <div style="width:100%; height:100%; padding:0; display:block; background-size:cover; background-image:url(/photolive/photos/2025-12/22503991220251648_m.jpg);"></div>
+                    style="height:100%; line-height:50px;"
+        <div class="menu-principal-colonne-left" style="display:block; width:155px">
+            <a class="pchref" href="/cartes-radiosondages-analyses-neige-au-sol.html#altitude">Donn&eacute;es d'altitude</a>
+            <a class="pchref" href="/stations/inscription.php?type=static">Ajouter ma station m&eacute;t&eacute;o</a>
+                OpenData m&eacute;t&eacute;o
+                <span style="background:rgb(150,0,0);color:white;border-radius:2px;font-size:0.7em; padding:2px 4px;">NEW !</span>
+        <div class="menu-principal-colonne-right" style="display:none;width:auto">
+            <div style="display:block; padding:0;" id="div-tempsreel-tempsreel" class="div-tempsreel">
+                <img id="autoprevi-tr-pic" src="//static.infoclimat.net/images/blank.gif" alt="" style="max-height:40px;margin-left:5px" />
+            <span style="font-size:20px;margin-left:10px;">
+            <span style="line-height:14px;font-size:10px;margin-left:10px;margin-right:4px">
+        <div style="position: absolute; bottom:25px; right:10px; display:block; text-align:right">
+                Param&eacute;trez l'affichage
+                des mini-cartes du menu&darr;
+                onclick="$('#config-desktop-selector').toggle(); return false;"
+                style="height:2rem; margin-top:8px; margin-right:8px; display:none;"
+                onchange="saveDesktopMenu(this);"
+            <span class="pchrf">P</span>r&eacute;visions <span class="pchrf">L</span>ocales
+        <a class="pchref" href="/previsions-meteo-par-ville.html" id="link_previ_locales">Pr&eacute;visions pour votre ville</a>
+        <a class="pchref" href="/previsions-meteo-par-ville.html">Toutes les villes &raquo;</a>
+            <span class="pchrf">M</span>od&egrave;les <span class="pchrf">M</span>&eacute;t&eacute;o
+        <script type="text/javascript">jQuery(function(){  blinkLed("#blinkerIDarome-france", "verte", "rouge", 100, 1000); });</script><a class="pchref" href="/modeles-meteorologiques.html?model=arome/france"><span class="tipsy-trigger" title="<b>Run en cours (06Z)</b><br />Derni&egrave;re carte : 11h20 loc.<br />(Avancement du run : 87%)"><span id="blinkerIDarome-france" class="led-verte blink-verte-to-rouge"></span>AROME 2.5km</span></a><a class="pchref" href="/modeles-meteorologiques.html?model=gfs/france"><span class="tipsy-trigger" title="<b>Run &agrave; jour (06Z)</b><br />Derni&egrave;re carte : 11h21 loc.<br />(Avancement du run : 100%)"><span class="led-verte"></span>GFS France 0.5 et 0.2&deg;</span></a><a class="pchref" href="/modeles-meteorologiques.html?model=gfs/europe"><span class="tipsy-trigger" title="<b>Run &agrave; jour (06Z)</b><br />Derni&egrave;re carte : 12h15 loc.<br />(Avancement du run : 100%)"><span class="led-verte"></span>GFS Europe 1.0&deg;</span></a><a class="pchref" href="/modeles-meteorologiques.html?model=ecmwf/europe"><span class="tipsy-trigger" title="<b>Dernier run OK (00Z)<br />run courant en retard</b><br />Derni&egrave;re carte : 09h46 loc."><span class="led-orange"></span>ECMWF-CEP Europe</span></a><a style="amargin-top:8px" class="pchref" href="/modeles-meteorologiques.html?model=gefs/europe"><span class="tipsy-trigger" title="<b>Run &agrave; jour (06Z)</b><br />Derni&egrave;re carte : 13h05 loc.<br />(Avancement du run : 100%)"><span class="led-verte"></span>Ensemble GEFS</span></a><a class="pchref" href="/modeles-meteorologiques.html?model=ecmwf/europe&amp;param=500_moy"><span class="tipsy-trigger" title="<b>Dernier run OK (00Z)<br />run courant en retard</b><br />Derni&egrave;re carte : 09h46 loc."><span class="led-orange"></span>Ensemble CEP</span></a>
+        <!--<a style="margin-top:8px" class="pchref" href="/modeles-meteorologiques.html?model=gfs/france&amp;affCPhelp">Coupes verticales</a>
+    <p class="menu-principal-colonne-left menu-principal-odd" style="font-size:0.9em;">
+            <span class="pchrf">P</span>r&eacute;visions
+    title="Mis &agrave; jour le 09/12/2025, 02h58."
+    Pyr&eacute;n&eacute;es-Orientales
+    title="Mis &agrave; jour le 09/12/2025, 02h57."
+    title="Mis &agrave; jour le 07/12/2025, 19h15."
+    title="Mis &agrave; jour le 07/12/2025, 18h01."
+    title="Mis &agrave; jour le 23/11/2025, 18h35."
+    Bouches-du-Rh&ocirc;ne
+    title="Mis &agrave; jour le 14/03/2025, 17h55."
+    title="Mis &agrave; jour le 01/12/2024, 09h41."
+    Basse Vall&eacute;e du Rh&ocirc;ne
+    title="Mis &agrave; jour le 01/03/2024, 13h57."
+    Midi-Pyr&eacute;n&eacute;es
+    title="Mis &agrave; jour le 15/08/2022, 17h28."
+    Is&egrave;re-Savoie
+    title="Mis &agrave; jour le 13/07/2019, 16h26."
+    title="Mis &agrave; jour le 09/02/2018, 10h16."
+    title="Mis &agrave; jour le 14/01/2018, 20h16."
+        <div style="height:285px;padding-right:110px;display:block;position:relative;padding-bottom:6px;cursor:pointer" class="div-tempsreel" id="div-tempsreel-previ">
+            <div style="display:block;position:absolute;right:0px;top:0;width:110px">
+            <span id="autoprevi-status" style="display:block;position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgb(0,0,0);color:white">
+            <b>Pr&eacute;visions pour <span id="autoprevi-name">-</span> :</b>
+            <img id="autoprevi-d0-p" src="//static.infoclimat.net/images/pictos_temps/soleil.png" alt="" style="float:left;max-height:40px;margin-left:5px" />
+            <span style="float:left;line-height:20px;font-size:20px;margin-left:10px;">
+                <span id="autoprevi-d0-tn">-</span>/<span id="autoprevi-d0-tx">-</span>&deg;C<br />
+                <span style="font-size:10px;line-height:11px;">
+                        style="max-height:12px;margin-bottom:-2px"
+                    <span id="autoprevi-d0-vdir">-</span> &ndash; <span id="autoprevi-d0-raf">-</span>km/h<br />
+            <div style="clear:both;display:block;text-align:left;padding-top:4px">
+                <span style="float:left;display:block">
+                        style="max-width:15px;max-height:12px;margin-left:5px"
+                        style="max-height:30px;margin-left:5px;margin-right:5px;"
+                <b style="display:inline;padding:0" id="autoprevi-d1-day">-</b>
+                &ndash; <span id="autoprevi-d1-tn">-</span>/<span id="autoprevi-d1-tx">-</span>&deg;C
+                <span id="autoprevi-d1-press">-</span>hPa &ndash;
+                <span style="float:left;display:block">
+                        style="max-width:15px;max-height:12px;margin-left:5px"
+                        style="max-height:30px;margin-left:5px;margin-right:5px;"
+                <b style="display:inline;padding:0" id="autoprevi-d2-day">-</b>
+                &ndash; <span id="autoprevi-d2-tn">-</span>/<span id="autoprevi-d2-tx">-</span>&deg;C
+                <span id="autoprevi-d2-press">-</span>hPa &ndash;
+                <span style="float:left;display:block">
+                        style="max-width:15px;max-height:12px;margin-left:5px"
+                        style="max-height:30px;margin-left:5px;margin-right:5px;"
+                <b style="display:inline;padding:0" id="autoprevi-d3-day">-</b>
+                &ndash; <span id="autoprevi-d3-tn">-</span>/<span id="autoprevi-d3-tx">-</span>&deg;C
+                <span id="autoprevi-d3-press">-</span>hPa &ndash;
+                <i id="autoprevi-maj" style="float:right;font-size:9px;margin-right:2px;margin-bottom:3px">...</i>
+                <span class="pchrf">B</span>ilans <span class="pchrf">M</span>&eacute;t&eacute;o (BQS)
+    style="overflow:hidden;max-height:22px;line-height:10px;margin-top:2px"
+    <span style="font-size:9px">FORTES GEL&Eacute;ES VOIRE TR&Egrave;S FORTES GEL&Eacute;ES AVANT UN NET REDOUX PAR LE SUD-OUEST !&nbsp;
+    style="overflow:hidden;max-height:22px;line-height:10px;margin-top:2px"
+    <span style="font-size:9px">OFFENSIVE HIVERNALE DUE A LA D&Eacute;PRESSION TEMP&Eacute;TUEUSE &amp;quot;ENOL&amp;quot; !
+    style="overflow:hidden;max-height:22px;line-height:10px;margin-top:2px"
+    <span style="font-size:9px">VENT TEMP&Eacute;TUEUX ET NEIGE ABONDANTE PR&Eacute;COCE AU PASSAGE DE LA D&Eacute;PRESSION CAETANO !...</span>
+    style="overflow:hidden;max-height:22px;line-height:10px;margin-top:2px"
+    <span style="font-size:9px">&Eacute;PISODE MEDITERRANEEN EXCEPTIONNEL !
+6 D&Eacute;PARTEMENTS EN VIGILANCE ROUGE !
+                <span class="pchrf">&Eacute;</span>v&eacute;nements <span class="pchrf">M</span>arquants (BS, 2S)
+    <span style="font-size:10px">: pluie, inondation, temp&ecirc;te</span>
+    <span style="font-size:10px">: neige, temp&ecirc;te</span>
+    <span style="font-size:10px">: pluie, inondation, temp&ecirc;te, douceur, orages</span>
+</a><a class="pchref" href="/suivis-speciaux.html">&raquo; Suivis sp&eacute;ciaux...</a><!--from cache-->    </p>
+Une vaste zone d&eacute;pressionnaire est en place entre la Grande-Bretagne et la S...</span>
+    <span style="font-size:9px">Situation actuelle :&nbsp;
+Un vaste syst&egrave;me d&eacute;pressionnaire, cons&eacute;cutif avec l&amp;#39;importante activit&eacute;...</span>
+La situation synoptique commence a bien changer sur l&amp;#39;atlantique, alors ...</span>
+Depuis maintenant plusieurs semaines, un blocage anticyclonique s&amp;#39;op&egrave;re....</span>
+        <a class="pchref" href="/climato/indicateur_national_RR.php">Indicateur pluviom&eacute;trique<br />national</a>
+        <a class="pchref" href="https://www.meteorage.com/fr/statistiques-foudre/">Bilans de foudroiement<span style="color:red;font-size:0.7em; float:right">NOUVEAU !</span></a>
+        <a class="pchref" href="/historic/#|1|%3E||0|9,18,15|0|dh_deb=&amp;dh_end=&amp;mois=&amp;year=">&Eacute;pisodes orageux, tornades</a>
+        <a class="pchref" href="/historic/#|1|%3E||0|2,16,17,11|0|dh_deb=&amp;dh_end=&amp;mois=&amp;year=">Fortes pluies, inondations</a>
+        <a class="pchref" href="/historic/#|1|%3E||0|14,1,2,16,17,6|0|dh_deb=&amp;dh_end=&amp;mois=&amp;year=">Froid, neige, temp&ecirc;tes...</a>
+        <a class="titre-pchref" href="/climato" style="margin-top:0"><span class="pchrf">D</span>onn&eacute;es <span class="pchrf">C</span>limato</a>
+        <a class="pchref" href="/climatic">Mes relev&eacute;s journaliers</a>
+        <a class="pchref" href="/climatologie/stations_principales.php">Requ&ecirc;tes climatologiques</a>
+        <a class="titre-pchref" href="/archives/20e.php"><span class="pchrf">C</span>artes <span class="pchrf">A</span>rchiv&eacute;es</a>
+        <a class="pchref" href="/modeles/ncep.php">R&eacute;analyses NCEP<br />1871-2011</a>
+<div id="container-menu-apprendre" style="background-image:url(//static.infoclimat.net/images/partenaires/logo_mae.png); background-repeat:no-repeat; background-position: 110px 5px;">
+    <p class="menu-principal-colonne-left menu-principal-odd" style="margin-top:85px; border-top:5px solid #006289;">
+            <span class="pchrf">S</span>tations &laquo;&nbsp;M&eacute;t&eacute;o &Agrave; l'&Eacute;cole&nbsp;&raquo;
+        <a class="pchref" href="/pedagogie/presentation.php">Pr&eacute;sentation de M&eacute;t&eacute;o &agrave; l'&Eacute;cole</a>
+        <a class="pchref" href="/pedagogie">Carte et donn&eacute;es des stations</a>
+            <span style="color:white; background:red; font-weight:bold; font-size:0.8em; border-radius:2px; padding:1px 4px;">NOUVEAU</span>
+            Ressources p&eacute;dagogiques lyc&eacute;e
+            &bull; Accompagnem<sup>t</sup> personnalis&eacute;
+            &bull; Seconde MPS
+            &bull; Prem&egrave;re S
+            &bull; 2nde Bac Pro / 2nde MPS
+    <p class="menu-principal-colonne-left" style="margin-top:85px; padding-top:8px; border-top:5px solid #006289; width:206px; margin-left:0; margin-right:0">
+        <span style="display:inline-block; padding:0 13px;">
+                <span style="color:white; background:red; font-weight:bold; font-size:0.8em; border-radius:2px; padding:1px 4px;">NOUVEAU</span>
+                Ressources p&eacute;dagogiques coll&egrave;ge
+                &bull; &Eacute;tude des conditions de formation du mistral
+                &bull; Formation et dissipation d'un brouillard &agrave; Chen&ocirc;ve
+                &bull; Les araign&eacute;es des Monts d'Arr&eacute;e
+                &bull; Diff&eacute;rence m&eacute;t&eacute;o/climato
+                &bull; &Eacute;pisode de pollution atmosph&eacute;rique
+    <p class="menu-principal-colonne-left menu-principal-odd" style="margin-top:85px; border-top:5px solid #006289;">
+            <span style="color:white; background:red; font-weight:bold; font-size:0.8em; border-radius:2px; padding:1px 4px;">NOUVEAU</span> Ressources scientifiques
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources1">&bull; Situations m&eacute;t&eacute;o classiques</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources2">&bull; Concept de perturbation</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources3">&bull; Ph&eacute;nom&egrave;nes exceptionnels</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources4">&bull; Ph&eacute;nom&egrave;nes brefs</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources6">&bull; Variations spatiales</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources7">&bull; Variations locales</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources8">&bull; Ph&eacute;nom&egrave;nes classiques</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources9">&bull; Ph&eacute;nom&egrave;nes des tropiques</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources10">&bull; Applications &agrave; la m&eacute;t&eacute;orologie</a>
+        <a class="pchref" href="/pedagogie/ressources_scientifiques.php#ressources11">&bull; Mesure</a>
+        <a class="pchref" href="https://www.meteorage.com/fr/comprendre-les-orages-et-la-foudre">&bull; M&eacute;t&eacute;orologie des orages</a>
+        <a class="titre-pchref" href="/dossiers" style="margin-top:0"><span class="pchrf">D</span>ossiers <span class="pchrf">M</span>&eacute;t&eacute;o</a>
+        <a class="pchref" href="/dossiers-meteo-20-approche-multidisciplinaire-pour-la-caracterisation-d-inondations-remarquables.html">Caract&eacute;risation d'inondations remarquables</a>
+        <a class="pchref" href="/dossiers-meteo-19-inondations-azureennes-du-3-octobre-2015.html">Inondations azur&eacute;ennes (octobre 2015)</a>
+        <a class="pchref" href="/bulletins-quotidiens-de-suivi-search-2009-01-24.html">Temp&ecirc;te Klaus</a>
+        <a class="pchref" href="/dossiers-meteo-1-la-tempete-klaus-du-24-janvier-2009.html">Temp&ecirc;te Klaus (2)</a>
+        <a class="pchref" href="/bulletins-quotidiens-de-suivi-search-2010-02-28.html">Temp&ecirc;te Xynthia</a>
+        <a class="pchref" href="/bulletins-quotidiens-de-suivi-search-2011-12-16.html">Temp&ecirc;te Joachim</a>
+        <a class="pchref" href="/dossiers-meteo-2-normes-d-installation-d-une-station-meteo-personnelle.html">Installation station m&eacute;t&eacute;o</a>
+        <a class="titre-pchref" href="/apprendre-lexique-meteo.html" style="margin-top:0"><span class="pchrf">V</span>ocabulaire <span class="pchrf">M</span>&eacute;t&eacute;o</a>
+    Cyclogen&egrave;se
+    Thermom&egrave;tre
+    Hygrom&egrave;tre
+    Abri m&eacute;t&eacute;orologique
+    Cong&eacute;lation
+</a><a class="pchref" href="/apprendre-lexique-meteo.html">&raquo; et bien d'autres...</a><!--from cache-->    </p>
+            <span class="pchrf">R</span>&eacute;seau StatIC
+        <a class="pchref" href="/stations/static.php">Pr&eacute;sentation du r&eacute;seau</a>
+        <a class="pchref" href="/electric">ElectrIC: points de vue de chasse &agrave; l'orage</a>
+        <a class="pchref" href="/outils/calculs.php">Calculs et conversions m&eacute;t&eacute;o</a>
+                <img src="//static.infoclimat.net/images/v5.2/star.png" alt="etoile" style="float:left;margin-right:10px" />
+                <a class="pchref" href="/actualites-infoclimat.html">Actualit&eacute;s</a>
+        <a class="pchref" href="/medias">Presse et m&eacute;dias</a>
+        <a class="pchref" href="/concours">Concours de pr&eacute;visions</a>
+        <a class="titre-pchref" href="https://facebook.com/infoclimat"><span class="pchrf">R</span>&eacute;seaux <span class="pchrf">S</span>ociaux</a>
+        <a style="margin-top:5px;" class="pchref" href="https://facebook.com/infoclimat">
+            <img src="//static.infoclimat.net/images/icone_facebook.png" alt="facebook" style="float:left;margin-right:10px" />
+        <a style="margin-top:5px;" class="pchref" href="https://twitter.com/infoclimat">
+            <img src="//static.infoclimat.net/images/icone_twitter.png" alt="twitter" style="float:left;margin-right:10px" />
+                <span style="color:white; background:red; font-weight:bold; font-size:0.8em; border-radius:2px; padding:1px 4px;">NOUVEAU</span>
+                <span class="pchrf">C</span>ontribuer &agrave; <span class="pchrf">I</span>nfoclimat
+            <span style="display:inline-block; padding:12px;" class="card-panel lime lighten-4">
+            Faites connaissance avec l'&eacute;quipe b&eacute;n&eacute;vole qui travaille dans
+            les coulisses d'Infoclimat pour en faire la plus belle communaut&eacute; m&eacute;t&eacute;o francophone.
+            <span style="display:inline-block; margin-top:4px">
+                Et vous aussi, contribuez &agrave; cette initiative lanc&eacute;e en 2001 en rejoignant notre &eacute;quipe !
+                    var PANEL_HEIGHT = 354;
+                        var bdw = Math.abs(($('body').width() - 1000) / 2);
+                        var s = $('#aplay-menu').css('display');
+                        $('.ui-opened-menu-waw').removeClass('ui-opened-menu-waw');
+                                $(this).css({ display: 'none', height: 'auto' });
+                            });
+                            }, 500);
+                            //$('#bandeau-inner').animate({marginTop:0},500);
+                            $('#bandeau-inner').css('box-shadow', 'none');
+                            $('.norc-toflive-elm').animate({ top: `-=${PANEL_HEIGHT}` }, 500);
+                            return false;
+                        elm.addClass('ui-opened-menu-waw');
+                            $('.menu-ui-opened').hide();
+                            $(`#container-menu-${menu}`).addClass('menu-ui-opened').css('display', 'block');
+                            var posleft = $('#menu_haut_1').offset().left + 3;
+                            }).animate({ height: PANEL_HEIGHT }, 500);
+                            }, 500);
+                            //$('#bandeau-inner').animate({marginTop: PANEL_HEIGHT },500);
+                            $('#bandeau-inner').css('box-shadow', '0 0 7px black');
+                            $('.norc-toflive-elm').animate({ top: `+=${PANEL_HEIGHT}` }, 500);
+                                $(`#container-menu-${menu}`).addClass('menu-ui-opened').delay(50).css('display', 'block');
+                            });
+                        return false;
+                        $(id).removeClass(`led-${fromColor}`).addClass(`led-${toColor}`);
+                            $(id).removeClass(`led-${toColor}`).addClass(`led-${fromColor}`);
+                        }, blinkTime);
+                            blinkLed(id, fromColor, toColor, blinkTime, interval);
+                        }, interval);
+                        return [e1, e2];
+            localtrig = 0;
+                localtrig++;
+                    return;
+                $('#stylesheet_V5').attr('href', `/styles/${name}.css`);
+            var JSON_PL = [];
+                    JSON_PL = d;
+                });
+                    $(this).find('div').fadeOut(400);
+                });
+            });
+            <li style="width:115px;height:92px;padding:0;margin-right:10px">
+                                <a style="z-index:999;" title="Retourner &agrave; l'accueil" href="/" id="link-accueil-header">
+                    <span id="text-accueil-header"><br />Infoclimat<br />la m&eacute;t&eacute;o<br />en temps r&eacute;el</span>
+                        <img style="border:0" src="//static.infoclimat.net/images/v5.1/logo_IC_5.1.png" alt="Infoclimat" title="<br />Infoclimat<br />la m&eacute;t&eacute;o<br />en temps r&eacute;el" />
+                        $(this).find('img').css('display', 'none');
+                        $(this).find('span').stop(true, true).fadeIn(500);
+                        $(this).find('span').css('display', 'none');
+                        $(this).find('img').stop(true, true).fadeIn(500);
+                    });
+            <li class="boite_photo"><div class="boite_station div-inner-station"><div class="vignettes" style="line-height:11px"><a class="station vignette-station-link" href="/stations-meteo/?s=07149">Orly - Athis-Mon.</a>13h00, <b class="vignette-mini-temperature" style="color:#ffc600">13.8&deg;C</b><br /><span style="color:#d4f3ff;" class="vignette-mini-humidite">85%</span>, <span style="color:#c5ffca;" class="vignette-mini-pression">1021.1hPa</span><br /><span><img 
+                            style="overflow:hidden;box-shadow:0 0 3px #000;width:90px;height:70px;display:inline-block;background-image:url(/photolive/vignettes/sprite.jpg?tk1765371756);background-position:-0px 0px;text-decoration:none;border-radius:4px"
+                            onmouseover="$(this).find('div').show().find('div').html(`${JSON_PL['v1v']||''}<br />${JSON_PL['l1l']||''}`).show();"
+                            onclick="$(this).attr('href',JSON_PL['photourl'.$nb_photolive.'x']);"
+                            style="overflow:hidden;box-shadow:0 0 3px #000;width:90px;height:70px;display:inline-block;background-image:url(/photolive/vignettes/sprite.jpg?tk1765371756);background-position:-90px 0px;text-decoration:none;border-radius:4px"
+                            onmouseover="$(this).find('div').show().find('div').html(`${JSON_PL['v2v']||''}<br />${JSON_PL['l2l']||''}`).show();"
+                            onclick="$(this).attr('href',JSON_PL['photourl'.$nb_photolive.'x']);"
+                            style="overflow:hidden;box-shadow:0 0 3px #000;width:90px;height:70px;display:inline-block;background-image:url(/photolive/vignettes/sprite.jpg?tk1765371756);background-position:-180px 0px;text-decoration:none;border-radius:4px"
+                            onmouseover="$(this).find('div').show().find('div').html(`${JSON_PL['v3v']||''}<br />${JSON_PL['l3l']||''}`).show();"
+                            onclick="$(this).attr('href',JSON_PL['photourl'.$nb_photolive.'x']);"
+                            style="overflow:hidden;box-shadow:0 0 3px #000;width:90px;height:70px;display:inline-block;background-image:url(/photolive/vignettes/sprite.jpg?tk1765371756);background-position:-270px 0px;text-decoration:none;border-radius:4px"
+                            onmouseover="$(this).find('div').show().find('div').html(`${JSON_PL['v4v']||''}<br />${JSON_PL['l4l']||''}`).show();"
+                            onclick="$(this).attr('href',JSON_PL['photourl'.$nb_photolive.'x']);"
+                            transform: scale(1.1);
+                            width: 250px;
+                            margin: 0 auto;
+                            /*height: 12px;*/
+                            height: 3px;
+                            position: relative;
+                            border-radius: 3px;
+                            background: rgba(0, 0, 0, 0.1);
+                            margin-bottom: 4px;
+                            background: green;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            border-radius: 3px;
+                            position: absolute;
+                            font-size: 10px;
+                            line-height: 12px;
+                            color: black;
+                        <div class="card-panel black-text" style="padding:2px 4px; display:inline-block; height:80px; width:315px; margin-top:0; background-image: radial-gradient( circle 592px at 48.2% 50%,  rgba(255,255,249,0.6) 0%, rgba(160,199,254,1) 74.6% ); margin-top:-8px; position:relative; margin-left: 8px; ">
+                            <!--<a style="position:absolute; right:0; top:0; padding:2px; text-decoration:none"  href="#" onclick="document.cookie = 'hide_adhesion_bandeau=yes; path=/; max-age=2678400'; document.location.reload(); return false;">&times;</a>-->
+                            <b style="font-size:1.2em; font-family:Exo,sans-serif;">
+                                100% gratuit &bull; 0% pub &bull; comment ?!
+                                                                    Gr&acirc;ce &agrave; des dizaines de b&eacute;n&eacute;voles, des milliers d'adh&eacute;rents et de donateurs, Infoclimat est rendu possible. Vous aussi, rejoignez-les !
+                                <div class="tipsy-trigger" style="width:54.24367771781%; background:linear-gradient(to left, #1d976c, #93f9b9)" title="Adh&eacute;sions : 84863&euro;"></div><!--adh+dons-->
+                                <div class="tipsy-trigger" style="width:13.349787972244%; background:linear-gradient(to left, #56ab2f, #a8e063);" title="Dons : 27703.48&euro;"></div><!--dons-->
+                                <span style="right:0; top:0;">objectif 207.520&euro; &rarr; </span>
+                                style="height:26px; line-height:26px; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);"
+                            >❤️ Adh&eacute;rer</a>
+                                style="height:26px; line-height:26px; margin-left:12px; background-image: linear-gradient(-40deg, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);"
+                                onclick="return IC_don_affiche_popup();"
+                                style="height:26px; line-height:26px; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%); padding:0 6px; margin-left:12px"
+    <div class="row" style="max-width: 1200px; text-align: left; font-family: Inter,sans-serif; font-size: 1.2em">
+                    <p style="font-size: 1.1em; line-height: 1.3em; font-family: Inter, sans-serif;">
+                    <div class="row" style="margin-top: 8px; margin-bottom: 0">
+                            <div class="card-panel yellow lighten-5" style="padding: 12px; font-family: Inter,sans-serif; margin-bottom: 0">
+                                <div style="font-weight: 700; font-size: 1.3em; margin-bottom: 3px">Exemples "Non-commercial"
+                            <div class="card-panel yellow lighten-4" style="padding: 12px; font-family: Inter,sans-serif; margin-bottom: 0">
+                                <div style="font-weight: 700; font-size: 1.3em; margin-bottom:3px">Exemples "Commercial"</div>
+                    <div style="max-width: 100%;">
+                        <div id="opendata-map" style="width: calc(100% + 48px); margin-top: 12px; height: 450px; margin-left: -24px; margin-right: -24px;">
+                        <div id="opendata-legend" style="position:  absolute; display:  none; background: white; padding: 6px; border-radius: 4px">
+                    <div style="font-size: 0.8em; margin-top: 5px">
+        var apiKeyToUse = null;
+            apiKeyToUse = $(this).val();
+            $('#waiting-for-api-key').css('display', 'none');
+        });
+        var defVal = $('input[name=apikeyradio]:checked').val();
+            apiKeyToUse = defVal;
+            $('#waiting-for-api-key').css('display', 'none');
+        const ETALAB = 0;
+        const CREATIVE_COMMONS = 1;
+        const NON_COMMERCIAL_LICENSE = 2;
+            let opendataMarkers = [];
+            });
+            });
+            });
+            });
+            });
+            });
+                    return (feature.get('licence') === ETALAB || feature.get('licence') === CREATIVE_COMMONS) ? styleOpenSource : styleNonCommercial;
+            });
+            map.addLayer(mapVectorLayer);
+                    );
+                });
+                mapVectorSource.addFeatures(opendataMarkers);
+            });
+            });
+            map.addInteraction(selectPointerMove);
+                    $('#opendata-legend').css('display', 'none');
+                    let libelle = /*html*/ `<b>${evt.selected[0].get('libelle')}</b>`;
+                    let licence = evt.selected[0].get('licence');
+                        //libelle += '<br>utilisation commerciale autorisée';
+                            style="max-height: 22px; margin-right: 5px; float: left"
+                    `;
+                    let px = evt.mapBrowserEvent.pixel;
+                    });
+            });
+            var selectedOnMap = [];
+                    const selIndex = selectedOnMap.indexOf(f);
+                        selectedOnMap.push(f);
+                        f.setStyle(f.get('licence') == NON_COMMERCIAL_LICENSE ? styleHighlightedNonCommercial : styleHighlightedOpenSource);
+                        const stid = f.get('stid');
+                            return;
+                        const fname = f.get('libelle');
+                        var option = new Option(fname, f.get('stid'), true, true);
+                        };
+                        $('#opendata-searchtext').append(option).trigger('change');
+                        selectedOnMap.splice(selIndex, 1);
+                        f.setStyle(f.get('licence') == NON_COMMERCIAL_LICENSE ? styleNonCommercial : styleOpenSource);
+                        const stid = f.get('stid');
+                            $('#opendata-searchtext').find(`option[value="${stid}"]`).remove().trigger('change');
+                });
+            });
+                    let ud = (element.pays == 'FR') ? `(${element.dept})` : `[${element.pays}]`;
+                    let html = '';
+                            style="max-height: 22px; float: left; margin-right: 5px"
+                        <span style="font-size: 0.8em; opacity: 0.8">
+                    `;
+                        <div style="text-align: left; min-height: 22px; line-height: 22px; background-image: url(//static.infoclimat.net/images/minilogoo.png); background-repeat: no-repeat; background-position: 100% 50%; padding-right: 20px; font-family: Inter; ">
+                    `;
+                        <div style="text-align: left; min-height: 22px; line-height: 22px; padding-right: 20px; font-family: Inter; ">
+                    `;
+                    return $(html);
+                    var data = element;
+                        data = element.element.customICData;
+                    let ud = (data.pays == 'FR') ? `(${data.dept})` : `[${data.pays}]`;
+                            style="max-height: 16px; float: right; margin-left: 5px"
+                    `;
+                    return $( /*html*/ `<div style="display: inline-block">${data.name} ${ud}</div>`);
+                        };
+                        return query;
+                        let res = [];
+                            });
+                        });
+                        };
+                let id_added = e.params.data.id;
+                    return (e.get('stid') === id_added);
+                });
+                found_marker.setStyle(found_marker.get('licence') == NON_COMMERCIAL_LICENSE ? styleHighlightedNonCommercial : styleHighlightedOpenSource);
+                selectedOnMap.push(found_marker);
+                let id_removed = e.params.data.id;
+                    return (e.get('stid') === id_removed);
+                });
+                found_marker.setStyle(found_marker.get('licence') == NON_COMMERCIAL_LICENSE ? styleNonCommercial : styleOpenSource);
+                const selIndex = selectedOnMap.indexOf(found_marker);
+                    selectedOnMap.splice(selIndex, 1);
+                updateOpenDataLink();
+            });
+        });
+        var tmp_unique_token = "";
+            let qstring = ['method=get'];
+            let format = $('input[name=opendata_format]:checked').val();
+            qstring.push(`format=${format}`);
+            let stations = $('#opendata-searchtext').val();
+            for (var i = 0; i < stations.length; i++) {
+                qstring.push(`stations[]=${stations[i]}`);
+            qstring.push(`start=${$('#dp-opendata-debut').val()}`);
+            qstring.push(`end=${$('#dp-opendata-fin').val()}`);
+            let url = `https://www.infoclimat.fr/opendata/?version=2&${qstring.join('&')}`;
+            $('#opendata_url').val(`${url}&token=${apiKeyToUse}`);
+            $('#opendata_dl').attr('action', `${url}&utoken=${tmp_unique_token}`);
+            return false;
+            updateOpenDataLink();
+        });
+            updateOpenDataLink();
+        });
+            let nb_stations = $('#opendata-searchtext').val().length;
+                alert('Merci de sélectionner au mois une station météorologique à l\'étape 1.');
+                return false;
+            return true;
+            <span style="float:left;font-size:11px">mercredi 10 d&eacute;cembre 2025</span>
+            Tous droits r&eacute;serv&eacute;s &ndash; 2001-2025        </li>
+                <li style="padding:0;width:70px">
+                    <a style="color:white;text-decoration:none;outline:none" onclick="$('html,body').animate({scrollTop:0},900);return false;" href="#" title="Cliquez ici pour retourner en haut">
+            Version 5.4<!--BENCH(l:28)=0.095968961715698--><span style="float:right;font-size:11px"><span title="&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;text-align:right&quot;&gt;&lt;b&gt;Forum&lt;/b&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:right&quot;&gt;&lt;b&gt;Site&lt;/b&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;7606&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:right&quot;&gt;&lt;b&gt;Mobile&lt;/b&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;42&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" class="tipsy-trigger">7648 connect&eacute;s</span> &mdash; 14:02:36</span>        </li>
+                                <li><a href="/contribuer">Devenir b&eacute;n&eacute;vole ou employ&eacute;</a></li>
+                                <li><a href="/about">Mentions l&eacute;gales</a></li>
+                                <li>&nbsp;&infin;</li>
+                <li><a href="http://archives-meteo.fr/">Moteur de recherche d'archives m&eacute;t&eacute;o</a></li>
+                <li><a href="http://www.meteo-ventoux.fr/">La m&eacute;t&eacute;o au Ventoux</a></li>
+                        <li style="padding:0;width:70px">
+                            &nbsp;
+                                <li>&infin;&nbsp;</li>
+                    Infoclimat est une marque d&eacute;pos&eacute;e sous le num&eacute;ro 053372184
+                    Site d&eacute;clar&eacute; &agrave; la CNIL (875366) | SIRET : 45386074400037
+                    Infoclimat est une association loi 1901 &agrave; but non lucratif
+    <form action="/include/connexion.php?url=%2Fopendata%2F%3Fversion%3D2method%3Dget%26format%3Dcsv%26stations%255B%255D%3DME099%26start%3D2025-10-01%26end%3D2025-10-30%26token%3DQDH1jwcsg47lV35924EGMeLf8QKDM8L8Y0KDIWAEJzVsa1Wot1eQ&amp;enc=utf-8" method="post">
+            <a href="#!" class="materialize waves-effect waves-green btn-flat right" onclick="oubliPassResponsive();" style="margin-top: -40px">Mot de passe oubli&eacute; ?</a>
+    <form action="#" method="post" onsubmit="return oubliPassRespVal();">
+            <p style="text-align:left; font-size:16px">
+                Veuillez indiquer dans le champ ci-dessous votre pseudo ou bien l'adresse e-mail que vous avez utilis&eacute;e
+                pour cr&eacute;er votre compte. Des instructions vous seront communiqu&eacute;es par e-mail.
+                <p class="red-text text-darken-3" id="resp-oubli-nok" style="font-size:14px; display:none">D&eacute;sol&eacute;, nous n'avons pas pu retrouver votre compte. Merci de r&eacute;essayer.</p>
+                <p class="red-text text-darken-3" id="resp-oubli-toomuch" style="font-size:14px; display:none">Trop de tentatives.</p>
+                <p class="green-text text-darken-3" id="resp-oubli-ok" style="font-size:14px; display:none">Des instructions de r&eacute;initialisation vous ont &eacute;t&eacute; envoy&eacute;es par email.</p>
+            <button type="submit" class="materialize waves-effect waves-green btn resp-oubli-button">R&eacute;initialiser mon mot de passe</button>
+    <div class="modal-content" style="padding:0; position:relative">
+        <p id="modal-don-helloasso-loading" style="font-size:3em; text-align:center; position: absolute; top:100px; width:100%">Chargement...</p>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat hide-on-small-only" onclick="IC_don_kill_timer(); $(body).css('overflow','auto'); return false;">Je ne peux/souhaite pas soutenir</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat hide-on-med-and-up" onclick="IC_don_kill_timer(); $(body).css('overflow','auto'); return false;">Ne pas soutenir</a>
+window.IC_don_popup_loaded = false;
+window.timer_popup_don = false;
+        clearTimeout(timer_popup_don);
+        timer_popup_don = false;
+        $('#modal-don-helloasso .modal-content').append('<iframe onload="$(\'#modal-don-helloasso-loading\').remove();" id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/association-infoclimat/formulaires/1/widget" style="width:100%;height:2000px;border:none;"></iframe>');
+        IC_don_popup_loaded = true;
+    .css('max-height','100%');
+        localStorage.setItem(localStName, '1');
+    }, 20000);
+    return false;
+$('#modal-resp-connexion,#modal-resp-oubli').modal();
+            document.location.reload(true);
+    });
+    $('#modal-resp-oubli').modal('open');
+            $('#resp-oubli-ok').css('display', 'block');
+            $('.resp-oubli-button').css('display', 'none');
+            $('#resp-oubli-close').css('display', 'inline-block');
+            $('#resp-oubli-toomuch').css('display', 'block');
+    });
+    return false;
+            <h4 style="font-size:2.5em; margin-bottom: 24px">D&eacute;sol&eacute; de vous avoir emb&ecirc;t&eacute;</h4>    
+            <div style="font-size:1.4em; line-height:1.5em">                    
+                <span style="float:left; background-image:url(https://www.infoclimat.fr/passionnes/photos/img/d/d2bbf1202ee8a11dbd98134909ff9896.jpg); width:90px; height:90px; border-radius:50%; background-size:100px; background-position:50% 50%;margin-right:8px; margin-bottom:8px; display:inline-block;"></span>
+                <span style="float:left; background-image:url(https://www.infoclimat.fr/images/v5.2/jean.jpg); width:90px; height:90px; border-radius:50%; background-size:100px; background-position:50% 50%;margin-right:8px; margin-bottom:8px; display:inline-block;"></span>
+                nous c'est Fr&eacute;d&eacute;ric (alias <i>Fred59</i>) et Jean (alias <i>Naej</i>). Nous sommes les petites mains derri&egrave;re le d&eacute;veloppement et la plateforme technique d'Infoclimat ! Nous sommes respectivement b&eacute;n&eacute;vole depuis 15 ans et salari&eacute; depuis 2022. La gestion de l'infrastructure technique d'un site comme Infoclimat sont des t&acirc;ches colossales qui, dans le monde
+                des entreprises, n&eacute;cessiteraient plusieurs ing&eacute;nieurs &agrave; plein temps.<br><br>
+                Apr&egrave;s des ann&eacute;es d'investissement 100% b&eacute;n&eacute;vole, dans l'ombre, de milliers d'heures &agrave; c&ocirc;t&eacute; des &eacute;tudes puis d'un emploi, votre soutien l'ann&eacute;e derni&egrave;re a &eacute;t&eacute; inestimable pour notre association, et a permis de recruter Jean en juillet 2022, notre d&eacute;veloppeur web en CDI !<br><br>
+                <b>VOUS</b> avez financ&eacute; un emploi avec du sens, dans une association qui ne cherche pas &agrave; &ecirc;tre lucrative, mais &ecirc;tre b&eacute;n&eacute;fique pour l'int&eacute;r&ecirc;t g&eacute;n&eacute;ral.
+                    <div class="card-panel card-panel-bigbutton hoverable" onclick="document.location='https://asso.infoclimat.fr/infos/formulaire.php';"
+                        style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                        <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">Adh&eacute;rer</h2>
+                        <span style="font-size:1.2em;">D&egrave;s 20&euro; par an (6.6&euro; apr&egrave;s r&eacute;duction d'imp&ocirc;ts), soutenez notre site et nos actions !</span>
+                            style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+                            J'adh&egrave;re
+                    <div class="card-panel card-panel-bigbutton hoverable" onclick="return IC_don_affiche_popup();"
+                        style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);">
+                        <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">Donner</h2>
+                        <span style="font-size:1.2em;">Soutenez-nous en donnant la somme de votre choix, <b>une seule fois ou bien chaque mois</b>.</span>
+                        <a href="https://asso.infoclimat.fr/infos/don.php" onclick="return IC_don_affiche_popup();"
+                            style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+                    <div class="card-panel card-panel-bigbutton hoverable" onclick="document.location='/contribuer';"
+                        style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                        <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">Participer autrement</h2>
+                        <span style="font-size:1.2em;">Parlez de nous autour de vous ! Ou bien contribuez b&eacute;n&eacute;volement.</span>
+                            style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+            <a href="#!" onclick="return false;" class="modal-close waves-effect waves-light btn-flat btn-small" style="text-decoration: none">Fermer</a>
+        <div class="modal-content" style="box-sizing: border-box; padding:14px; padding-bottom:0">
+            <h4 style="font-size: 2em; margin-bottom: 8px; font-weight: bold; text-align: center;">
+            <div style="font-size:1.1em; line-height:1.5em">
+                <p>Gr&acirc;ce &agrave; vous, nous pourrons r&eacute;aliser nos nombreux projets et renforcer notre mission pour la science climatique.</p>
+                <p>Voici nos propri&eacute;t&eacute;s :</p>
+                        <b>Modernisation technique : </b> mise &agrave; jour de notre infrastructure et de notre code pour mieux g&eacute;rer les donn&eacute;es climatiques.
+                        <b>Innovation : </b> lancement des stations m&eacute;t&eacute;o autonomes connect&eacute;es, id&eacute;ales pour couvrir des zones recul&eacute;es comme les Parcs Naturels.  
+                        <b>Projets &eacute;ducatifs : </b> d&eacute;veloppement d'une initiative europ&eacute;enne pour sensibiliser au changement climatique.
+                        <div class="card-panel card-panel-bigbutton hoverable" onclick="document.location='https://asso.infoclimat.fr/infos/formulaire.php';"
+                            style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                            <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">Adh&eacute;rer</h2>
+                            <span style="font-size:1.2em;">D&egrave;s 20&euro; par an (6.6&euro; apr&egrave;s r&eacute;duction d'imp&ocirc;ts), soutenez notre site et nos actions !</span>
+                                style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+                                J'adh&egrave;re
+                        <div class="card-panel card-panel-bigbutton hoverable" onclick="return IC_don_affiche_popup();"
+                            style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);">
+                            <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">Donner</h2>
+                            <span style="font-size:1.2em;">Soutenez-nous avec la somme de votre choix (m&ecirc;me 1&euro;), <b>une seule fois ou bien chaque mois</b>.</span>
+                            <a href="https://asso.infoclimat.fr/infos/don.php" onclick="return IC_don_affiche_popup();"
+                                style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+                        <div class="card-panel card-panel-bigbutton hoverable" onclick="document.location='https://xn8sr.mjt.lu/nl3/1PrhRNbYKSoeKfxtcSaxlg?hl=fr';"
+                            style="padding:12px; text-align:left; position: relative; padding-bottom:32px; cursor:pointer; background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                            <h2 style="font-family:Lato; font-weight:bold; margin:0; padding:0; font-size:2em; margin-bottom:10px; text-align:center">En savoir plus...</h2>
+                            <span style="font-size:1.2em;">Lisez le message de notre pr&eacute;sident, Laurent Garcelon, qui vous explique tout.</span>
+                            <img src="//static.infoclimat.net/images/nl2021/laurent.png" style="position: absolute; bottom:-20px; left:10px; height:52px; width:52px; " alt="Laurent Garcelon" />
+                                style="position: absolute; bottom:-12px; right:10px; white-space:nowrap; overflow:visible"
+            <a href="#!" class="modal-close waves-effect waves-light btn-flat btn-small left" onclick="return nePlusVoirAdh2021();" style="text-decoration: none">Fermer</a>
+    const currentYear = (new Date()).getFullYear();
+    const localStName = `adh${currentYear}_lptv2`;
+            $('#modal-adh2021-incentive').modal('open').css('max-height','80%');
+        localStorage.setItem(localStName, '1');
+        // localStorage.setItem(localStName, new Date().getTime());
+        return false;
+        localStorage.setItem(localStName, new Date().getTime());
+        return false;
+        const localStorageItemKey = `IsFirstVisit${currentYear}`;
+        let nbVisits = localStorage.getItem(localStorageItemKey);
+        nbVisits = nbVisits === null ? 0 : parseInt(nbVisits, 10);
+        let isFirstVisit = nbVisits < 6;
+            localStorage.setItem(localStorageItemKey, nbVisits + 1);
+        var ls = localStorage.getItem(localStName);
+        var cdate = new Date().getTime();
+            }).modal('open').css('max-height','80%');
+            });
+            localStorage.setItem(localStName, new Date().getTime()); // lire plus tard
+            $('#modal-adh2021').remove();
+            &copy; 2001-2025 Association Infoclimat &bull;
+            <a class="grey-text text-lighten-4" href="/about">Mentions l&eacute;gales</a>
+            7606 connect&eacute;s        </div>
